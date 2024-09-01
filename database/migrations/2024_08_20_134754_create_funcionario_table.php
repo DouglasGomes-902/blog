@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('funcionario', function (Blueprint $table) {
             $table->id();
             $table->string('name',length: 100);
+            $table->string('EMAIL',length: 100);
             $table->timestamps();
         });
     }
