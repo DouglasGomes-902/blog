@@ -13,21 +13,6 @@ class FuncionarioSeeder extends Seeder
      */
     public function run(): void
     {
-            DB::table('funcionario')->insert([
-                'name' => 'Douglas gomes rodrigues'
-            ]);
-            DB::table('funcionario')->insert([
-                'name' => 'joaquina'
-            ]);
-            DB::table('funcionario')->insert([
-                'name' => 'jinxvi'
-            ]);
-            DB::table('funcionario')->insert([
-                'EMAIL' => 'douglas902'
-            ]);
-            DB::table('funcionario')->insert([
-                'EMAIL' => 'jinxkatarina'
-            ]);
-        
+        //
     }
 }

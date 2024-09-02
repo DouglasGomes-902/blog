@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\CategoriaController;
 
 
 /*
@@ -21,8 +22,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//home
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
- 
+//funcionarios
 Route::get('/Funcionario', [FuncionarioController::class, 'index']);
+
+//categorias
+Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
