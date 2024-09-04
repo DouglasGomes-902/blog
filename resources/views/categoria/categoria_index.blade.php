@@ -7,21 +7,27 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
+                <a href="{{url('/categoria/create')}}"><button>Create</button></a>
+
                 <table>
             <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+                
             </tr>
                     @foreach($categorias as $value)
             <tr>
-                <td>{{$value->id}}</td>
-                <td>{{$value->nome}}</td>
+                <td>{{$value->id}}</td> 
+                <td>{{$value->nome}}</td>   
+                <td>
+                    <a href="{{url('/categoria/' . $value->id)}}"><button>Visualizar</button></a>
+                </td>
             </tr>
         
                     @endforeach
-                </table>
-                
+                  </table>
+                </div>
             </div>
         </div>
     </div>

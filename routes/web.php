@@ -23,10 +23,17 @@ Route::get('/', function () {
 Auth::routes();
 
 //home
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home',[App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //funcionarios
-Route::get('/Funcionario', [FuncionarioController::class, 'index']);
+Route::get('/Funcionario',[FuncionarioController::class, 'index']);
 
 //categorias
-Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
+Route::get('/categoria',[CategoriaController::class, 'index'])->name('categoria.index');
+
+Route::get('/categoria/create',[CategoriaController::class, 'create'])->name('categoria.create');
+    
+Route::post('/categoria',[CategoriaController::class, 'store'])->name('categoria.store');
+
+Route::get('/categoria/{id}',[CategoriaController::class,'show'])->name('categoria.show');
+
