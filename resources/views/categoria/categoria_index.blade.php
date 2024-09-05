@@ -8,6 +8,12 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <a href="{{url('/categoria/create')}}"><button>Create</button></a>
+             
+                @if (session('mensagem'))
+                    <div class="alert alert-success">
+                        {{ session('mensagem') }}
+                    </div>
+                @endif
 
                 <table>
             <tr>
@@ -22,6 +28,15 @@
                 <td>{{$value->nome}}</td>   
                 <td>
                     <a href="{{url('/categoria/' . $value->id)}}"><button>Visualizar</button></a>
+                    <a href="{{url('/categoria/' . $value->id . '/edit' )}}"><button>Editar</button></a>
+                    
+                    <form method = 'POST' action="{{ URL('/categoria/' . $value->id)}}">
+                    @method('DELETE')
+                    @csrf  
+                    <button type="submit">delete</button>
+
+                    </form>
+
                 </td>
             </tr>
         
