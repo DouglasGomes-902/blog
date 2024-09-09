@@ -334,8 +334,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],  
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
+            'text' => 'Postagem',
+            'url' => 'postagem',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [

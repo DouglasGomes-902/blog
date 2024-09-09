@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <a href="{{url('/categoria/create')}}"><button>Create</button></a>
+                <a href="{{url('/postagem/create')}}"><button>Create</button></a>
              
                 @if (session('mensagem'))
                     <div class="alert alert-success">
@@ -25,19 +25,21 @@
                 <table>
             <tr>
                 <th>ID</th>
-                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Titulo</th>
                 <th>Ações</th>
                 
             </tr>
-                    @foreach($categorias as $value)
+                    @foreach($postagens as $value)
             <tr>
                 <td>{{$value->id}}</td> 
-                <td>{{$value->nome}}</td>   
+                <td>{{$value->categoria->nome}}</td>   
+                <td>{{$value->titulo}}</td>   
                 <td>
-                    <a href="{{url('/categoria/' . $value->id)}}"><button>Visualizar</button></a>
-                    <a href="{{url('/categoria/' . $value->id . '/edit' )}}"><button>Editar</button></a>
+                    <a href="{{url('/postagem/' . $value->id)}}"><button>Visualizar</button></a>
+                    <a href="{{url('/postagem/' . $value->id . '/edit' )}}"><button>Editar</button></a>
                     
-                    <form method = 'POST' action="{{ URL('/categoria/' . $value->id)}}" onsubmit = 'return ConfirmDelet()'>
+                    <form method = 'POST' action="{{ URL('/postagem/' . $value->id)}}" onsubmit = 'return ConfirmDelet()'>
                     @method('DELETE')
                     @csrf  
                     <button type="submit">delete</button>
