@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::middleware(['auth'])->group(function () {
+
 //----------------------home
 Route::get('/home',[App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -65,3 +67,5 @@ Route::put('/postagem/{id}', [PostagemController::class, 'update'])->name('posta
 Route::delete('/postagem/{id}', [PostagemController::class, 'destroy'])->name('postagem.destroy');
 
 //----------------------Postagem------------------------
+
+});
